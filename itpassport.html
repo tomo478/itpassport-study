@@ -1375,6 +1375,7 @@ function qResult(){
     <p style="font-size:13.5px;color:var(--ink2);margin:10px 0 18px">${rate>=80?'仕上がってきています。次は模試で本番形式に挑戦!':rate>=60?'合格圏が見えてきました。間違えた問題の解説を読み返そう。':'まだ伸びしろたっぷり。教科書に戻って該当章を読み直すのが近道です。'}</p>
     <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
       ${qz.chapterId&&!S.read[qz.chapterId]?`<button class="btn pri" onclick="completeChapterFromQuiz('${qz.chapterId}')">この章を学習完了にする 🐾</button>`:''}
+      ${qz.chapterId?`<button class="btn pri" onclick="vChapter('${qz.chapterId}')">教科書のこの章へ戻る 📚</button>`:''}
       ${qz.chapterId?`<button class="btn" onclick="startQuiz('${fieldOfCh(qz.chapterId)}','${qz.chapterId}')">この章の問題をもう一度解く</button>`:''}
       <button class="btn ${qz.chapterId?'':'pri'}" onclick="go('quiz')">${qz.chapterId?'演習メニューへ':'もう一度演習する'}</button>
       <button class="btn" onclick="go('weak')">弱点を復習する</button>
