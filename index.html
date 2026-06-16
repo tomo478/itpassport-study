@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ITパスポート合格道場</title>
+<title>ITパスポート にゃんこ合格道場</title>
 <style>
 :root{
   --paper:#f6f1e7; --paper2:#efe8d9; --ink:#1e2430; --ink2:#4a5264;
@@ -15,61 +15,69 @@
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{-webkit-text-size-adjust:100%}
-body{background:var(--paper);color:var(--ink);font-family:var(--sans);line-height:1.75;
-  background-image:radial-gradient(rgba(176,138,60,.06) 1px,transparent 1px);background-size:22px 22px;}
+body{background:linear-gradient(180deg,#fffdfd 0%,#fff7fb 52%,#fefcf7 100%);color:var(--ink);font-family:var(--sans);line-height:1.75;
+  background-image:
+    radial-gradient(circle at 18px 18px, rgba(255,123,165,.10) 0 4px, transparent 4.5px),
+    radial-gradient(circle at 34px 12px, rgba(140,156,255,.10) 0 3px, transparent 3.5px),
+    radial-gradient(circle at 10px 36px, rgba(117,181,139,.10) 0 3px, transparent 3.5px),
+    linear-gradient(180deg,#fffdfd 0%,#fff7fb 52%,#fefcf7 100%);
+  background-size:52px 52px,52px 52px,52px 52px,auto;}
+body::before,body::after{content:"🐾";position:fixed;font-size:26px;opacity:.14;pointer-events:none;z-index:0}
+body::before{left:14px;bottom:18px;transform:rotate(-16deg)}
+body::after{right:18px;top:110px;transform:rotate(14deg)}
 button{font-family:inherit;cursor:pointer}
 /* header */
-header{position:sticky;top:0;z-index:50;background:rgba(246,241,231,.92);backdrop-filter:blur(8px);
-  border-bottom:2px solid var(--ink)}
-.hwrap{max-width:1060px;margin:0 auto;padding:10px 16px;display:flex;align-items:center;gap:14px}
-.mark{width:38px;height:38px;border-radius:50%;background:var(--shu);color:#fff;display:flex;align-items:center;justify-content:center;
-  font-family:var(--serif);font-weight:700;font-size:17px;flex-shrink:0;box-shadow:0 0 0 2px var(--paper),0 0 0 3.5px var(--shu)}
-.htitle{font-family:var(--serif);font-size:19px;font-weight:700;letter-spacing:.06em;line-height:1.2}
-.hsub{font-size:10.5px;color:var(--ink2);letter-spacing:.18em}
-nav{max-width:1060px;margin:0 auto;padding:0 10px;display:flex;gap:2px;overflow-x:auto;scrollbar-width:none}
+header{position:sticky;top:0;z-index:50;background:rgba(255,250,252,.92);backdrop-filter:blur(12px);
+  border-bottom:2px solid #f3d5e3;box-shadow:0 8px 18px rgba(232,168,196,.16)}
+.hwrap{max-width:1060px;margin:0 auto;padding:12px 16px;display:flex;align-items:center;gap:14px;position:relative}
+.mark{width:50px;height:50px;border-radius:18px;background:linear-gradient(135deg,#ff9ec0,#ff7ba5);color:#fff;display:flex;align-items:center;justify-content:center;
+  font-weight:700;font-size:24px;flex-shrink:0;box-shadow:0 0 0 3px #fff,0 10px 18px rgba(255,123,165,.25);position:relative}.mark::before,.mark::after{content:"";position:absolute;top:-7px;width:14px;height:14px;background:#ff97bb;border-radius:4px 12px 4px 12px}.mark::before{left:8px;transform:rotate(-30deg)}.mark::after{right:8px;transform:rotate(30deg)}
+.htitle{font-family:var(--serif);font-size:20px;font-weight:700;letter-spacing:.04em;line-height:1.2}
+.hsub{font-size:10.5px;color:#9b8fa0;letter-spacing:.14em}
+nav{max-width:1060px;margin:0 auto;padding:0 10px 6px;display:flex;gap:6px;overflow-x:auto;scrollbar-width:none}
 nav::-webkit-scrollbar{display:none}
-.tab{border:none;background:none;padding:9px 13px 11px;font-size:13.5px;font-weight:700;color:var(--ink2);
-  border-bottom:3px solid transparent;white-space:nowrap;letter-spacing:.04em}
-.tab.on{color:var(--shu);border-bottom-color:var(--shu)}
+.tab{border:none;background:#fff6fa;padding:9px 14px 11px;font-size:13.5px;font-weight:700;color:var(--ink2);
+  border:1.5px solid #f3dbe7;border-radius:999px;white-space:nowrap;letter-spacing:.04em;box-shadow:0 4px 10px rgba(230,197,214,.15)}
+.tab.on{color:#fff;background:linear-gradient(135deg,#ff9ec0,#ff7ba5);border-color:#ff7ba5;box-shadow:0 6px 12px rgba(255,123,165,.28)}
 main{max-width:1060px;margin:0 auto;padding:22px 16px 80px}
 /* generic */
 h2.pg{font-family:var(--serif);font-size:25px;font-weight:700;letter-spacing:.05em;margin-bottom:4px}
 .pgsub{color:var(--ink2);font-size:13px;margin-bottom:20px}
-.card{background:#fffdf8;border:1.5px solid var(--line);border-radius:10px;padding:18px 20px;box-shadow:2.5px 3px 0 rgba(30,36,48,.07)}
-.fieldchip{display:inline-block;font-size:11px;font-weight:700;padding:2px 9px;border-radius:99px;letter-spacing:.05em}
+.card{background:rgba(255,255,255,.92);border:1.5px solid var(--line);border-radius:22px;padding:18px 20px;box-shadow:0 10px 24px rgba(228,196,214,.18)}
+.fieldchip{display:inline-block;font-size:11px;font-weight:700;padding:4px 11px;border-radius:999px;letter-spacing:.05em;box-shadow:0 2px 6px rgba(210,180,196,.16)}
 .f-strategy{background:var(--shu-soft);color:var(--shu)}
 .f-management{background:var(--matcha-soft);color:var(--matcha)}
 .f-technology{background:var(--indigo-soft);color:var(--indigo)}
-.btn{display:inline-block;border:2px solid var(--ink);background:#fffdf8;color:var(--ink);border-radius:8px;
-  padding:9px 18px;font-size:14px;font-weight:700;box-shadow:2px 2.5px 0 var(--ink);transition:.12s}
-.btn:active{transform:translate(2px,2.5px);box-shadow:none}
-.btn.pri{background:var(--shu);border-color:var(--shu);color:#fff;box-shadow:2px 2.5px 0 #7e2113}
+.btn{display:inline-block;border:2px solid #d9a9bd;background:#fffdfd;color:var(--ink);border-radius:999px;
+  padding:10px 18px;font-size:14px;font-weight:700;box-shadow:0 6px 0 #f3d8e3;transition:.12s}
+.btn:active{transform:translateY(3px);box-shadow:0 3px 0 #f3d8e3}
+.btn.pri{background:linear-gradient(135deg,#ff97bb,#ff7ba5);border-color:#ff7ba5;color:#fff;box-shadow:0 6px 0 #e46c93}
 .btn.sm{padding:5px 12px;font-size:12.5px}
 .btn:disabled{opacity:.4;pointer-events:none}
 .grid2{display:grid;grid-template-columns:repeat(auto-fill,minmax(290px,1fr));gap:14px}
 /* home */
-.hero{position:relative;background:linear-gradient(135deg,#fffdf8 0%,#f8efe0 100%);border:2px solid var(--ink);border-radius:14px;
-  padding:26px 24px;margin-bottom:22px;overflow:hidden;box-shadow:4px 5px 0 rgba(30,36,48,.12)}
-.hero::after{content:"合格";position:absolute;right:-14px;bottom:-38px;font-family:var(--serif);font-size:120px;font-weight:700;
-  color:rgba(207,59,38,.07);line-height:1;pointer-events:none}
+.hero{position:relative;background:linear-gradient(135deg,#fffafc 0%,#fff3f8 55%,#fff9ed 100%);border:2px solid #f2d0df;border-radius:28px;
+  padding:28px 24px;margin-bottom:22px;overflow:hidden;box-shadow:0 14px 28px rgba(236,196,214,.24)}
+.hero::after{content:"にゃ";position:absolute;right:10px;bottom:-6px;font-size:110px;font-weight:700;
+  color:rgba(255,123,165,.10);line-height:1;pointer-events:none}
 .hero h2{font-family:var(--serif);font-size:clamp(22px,4.5vw,30px);letter-spacing:.04em;margin-bottom:8px}
 .hero p{font-size:13.5px;color:var(--ink2);max-width:600px}
 .statrow{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:12px;margin-bottom:22px}
-.stat{background:#fffdf8;border:1.5px solid var(--line);border-radius:10px;padding:13px 15px}
+.stat{background:#fffefe;border:1.5px solid var(--line);border-radius:20px;padding:13px 15px;box-shadow:0 8px 18px rgba(233,205,220,.16)}
 .stat .lb{font-size:11px;color:var(--ink2);letter-spacing:.08em}
 .stat .vl{font-family:var(--serif);font-size:26px;font-weight:700}
 .stat .vl small{font-size:13px;font-weight:400;color:var(--ink2)}
-.bar{height:8px;background:var(--paper2);border-radius:99px;overflow:hidden;margin-top:6px}
+.bar{height:9px;background:#fbe7ef;border-radius:99px;overflow:hidden;margin-top:6px}
 .bar i{display:block;height:100%;border-radius:99px;background:var(--shu);transition:width .5s}
 .roadmap{counter-reset:step}
-.rstep{display:flex;gap:14px;padding:13px 4px;border-bottom:1px dashed var(--line)}
+.rstep{display:flex;gap:14px;padding:13px 4px;border-bottom:1px dashed #edd4df}
 .rstep:last-child{border-bottom:none}
 .rstep::before{counter-increment:step;content:counter(step,decimal-leading-zero);font-family:var(--serif);font-size:21px;font-weight:700;color:var(--gold);flex-shrink:0;width:36px}
 .rstep b{display:block;font-size:14.5px}
 .rstep span{font-size:12.5px;color:var(--ink2)}
 /* lessons */
-.chcard{display:flex;flex-direction:column;gap:7px;text-align:left;border:1.5px solid var(--line);background:#fffdf8;border-radius:10px;
-  padding:15px 17px;box-shadow:2.5px 3px 0 rgba(30,36,48,.07);transition:.12s}
+.chcard{display:flex;flex-direction:column;gap:7px;text-align:left;border:1.5px solid var(--line);background:#fffdfd;border-radius:22px;
+  padding:15px 17px;box-shadow:0 10px 22px rgba(228,196,214,.18);transition:.12s}
 .chcard:hover{transform:translateY(-2px)}
 .chcard .tt{font-family:var(--serif);font-size:16.5px;font-weight:700;line-height:1.45}
 .chcard .mt{font-size:11.5px;color:var(--ink2);display:flex;gap:10px;align-items:center}
@@ -85,8 +93,8 @@ h2.pg{font-family:var(--serif);font-size:25px;font-weight:700;letter-spacing:.05
 .backrow{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:16px;flex-wrap:wrap}
 /* flashcards */
 .fcard{max-width:560px;margin:0 auto;perspective:1200px}
-.fcinner{position:relative;min-height:240px;border:2px solid var(--ink);border-radius:14px;background:#fffdf8;
-  box-shadow:4px 5px 0 rgba(30,36,48,.12);display:flex;align-items:center;justify-content:center;padding:28px;text-align:center;cursor:pointer}
+.fcinner{position:relative;min-height:240px;border:2px solid #ecc9d7;border-radius:28px;background:linear-gradient(180deg,#fffefe,#fff7fb);
+  box-shadow:0 14px 28px rgba(236,196,214,.22);display:flex;align-items:center;justify-content:center;padding:28px;text-align:center;cursor:pointer}
 .fcinner .term{font-family:var(--serif);font-size:clamp(20px,5vw,28px);font-weight:700;letter-spacing:.04em}
 .fcinner .def{font-size:14.5px;line-height:1.9;text-align:left}
 .fchint{position:absolute;bottom:10px;left:0;right:0;text-align:center;font-size:11px;color:var(--ink2);letter-spacing:.1em}
@@ -94,8 +102,8 @@ h2.pg{font-family:var(--serif);font-size:25px;font-weight:700;letter-spacing:.05
 /* quiz */
 .qmeta{display:flex;justify-content:space-between;align-items:center;font-size:12.5px;color:var(--ink2);margin-bottom:10px;flex-wrap:wrap;gap:6px}
 .qtext{font-family:var(--serif);font-size:17px;font-weight:700;line-height:1.8;margin-bottom:16px;white-space:pre-wrap}
-.choice{display:flex;gap:11px;align-items:flex-start;width:100%;text-align:left;background:#fffdf8;border:1.5px solid var(--line);
-  border-radius:9px;padding:12px 14px;font-size:14px;margin-bottom:9px;line-height:1.65;transition:.1s}
+.choice{display:flex;gap:11px;align-items:flex-start;width:100%;text-align:left;background:#fffefe;border:1.5px solid var(--line);
+  border-radius:18px;padding:12px 14px;font-size:14px;margin-bottom:9px;line-height:1.65;transition:.1s;box-shadow:0 5px 12px rgba(236,216,226,.15)}
 .choice:hover{border-color:var(--ink)}
 .choice .mk{font-family:var(--serif);font-weight:700;flex-shrink:0;width:24px;height:24px;border:1.5px solid var(--ink2);
   border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:12.5px;margin-top:1px}
@@ -103,7 +111,7 @@ h2.pg{font-family:var(--serif);font-size:25px;font-weight:700;letter-spacing:.05
 .choice.sel-ng{border-color:var(--ng);background:#f9ecea;box-shadow:0 0 0 1.5px var(--ng)}
 .choice.reveal-ok{border-color:var(--ok)}
 .choice:disabled{cursor:default}
-.expl{border:1.5px solid var(--line);border-left:5px solid var(--gold);background:#fbf7ec;border-radius:8px;padding:13px 16px;font-size:13.5px;margin-top:6px}
+.expl{border:1.5px solid var(--line);border-left:5px solid var(--gold);background:#fffaf0;border-radius:18px;padding:13px 16px;font-size:13.5px;margin-top:6px}
 .expl b{font-family:var(--serif)}
 .verdict{font-family:var(--serif);font-size:19px;font-weight:700;margin:4px 0 10px}
 .verdict.ok{color:var(--ok)} .verdict.ng{color:var(--ng)}
@@ -117,29 +125,362 @@ h2.pg{font-family:var(--serif);font-size:25px;font-weight:700;letter-spacing:.05
 .passband.ng{background:var(--shu-soft);color:var(--ng);border:2px solid var(--ng)}
 .fbreak{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:12px;margin-top:14px}
 .setuprow{display:flex;gap:10px;flex-wrap:wrap;margin:14px 0}
-.opt{border:1.5px solid var(--line);background:#fffdf8;border-radius:99px;padding:7px 16px;font-size:13.5px;font-weight:700;color:var(--ink2)}
-.opt.on{border-color:var(--shu);color:var(--shu);background:var(--shu-soft)}
+.opt{border:1.5px solid var(--line);background:#fffdfd;border-radius:999px;padding:7px 16px;font-size:13.5px;font-weight:700;color:var(--ink2);box-shadow:0 4px 10px rgba(228,196,214,.12)}
+.opt.on{border-color:#ff8db2;color:#ff6e9b;background:#ffe3ed}
 .note{font-size:12px;color:var(--ink2)}
 .empty{color:var(--ink2);font-size:14px;text-align:center;padding:34px 10px}
 .mockhist td,.mockhist th{font-size:13px;padding:7px 9px;border-bottom:1px solid var(--line);text-align:left}
-.mockhist th{font-family:var(--serif);border-bottom:2px solid var(--ink)}
+.mockhist th{font-family:var(--serif);border-bottom:2px solid #e4bccd}
 .timer{font-family:var(--serif);font-weight:700;font-size:16px;color:var(--indigo)}
 .tag-weak{font-size:10.5px;color:var(--ng);border:1px solid var(--ng);border-radius:99px;padding:0 7px;font-weight:700}
-@media(max-width:560px){ main{padding:16px 12px 70px} .card{padding:15px 14px} .hero{padding:20px 16px} }
+
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(180px,.6fr);gap:18px;align-items:center}
+.kira{display:inline-flex;align-items:center;gap:8px;background:#fff6b8;color:#8f6e14;border-radius:999px;padding:6px 12px;font-size:12px;font-weight:700;margin-bottom:12px;box-shadow:0 6px 14px rgba(255,207,123,.22)}
+.catline{display:flex;gap:8px;align-items:center;flex-wrap:wrap;margin-top:14px}
+.cat-pill{display:inline-flex;align-items:center;gap:6px;background:#fff;border:1.5px solid #f1d6e2;border-radius:999px;padding:6px 10px;font-size:12px;color:#8b7b8f}
+.cat-mascot-wrap{display:flex;justify-content:center}
+.cat-mascot{width:164px;height:164px;border-radius:50%;background:radial-gradient(circle at 50% 35%,#fff 0 18px,transparent 19px),linear-gradient(180deg,#fffdfd,#ffe7f0);border:2px solid #f1d6e2;position:relative;box-shadow:0 12px 26px rgba(236,196,214,.26)}
+.cat-mascot::before,.cat-mascot::after{content:"";position:absolute;top:-18px;width:44px;height:44px;background:linear-gradient(180deg,#ffd7e6,#ffbfd4);border:2px solid #f1d6e2;z-index:0}
+.cat-mascot::before{left:24px;border-radius:10px 28px 8px 28px;transform:rotate(-18deg)}
+.cat-mascot::after{right:24px;border-radius:28px 10px 28px 8px;transform:rotate(18deg)}
+.cat-face{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:74px;z-index:1}
+.cat-face span{transform:translateY(8px)}
+.cat-bubble{position:absolute;right:-8px;top:12px;background:#fff;border:1.5px solid #f1d6e2;border-radius:18px 18px 18px 6px;padding:9px 12px;font-size:12px;line-height:1.5;color:#8d6d82;box-shadow:0 8px 18px rgba(236,196,214,.18)}
+.cat-bubble b{color:#ff6d9c}
+.pg::after{content:" ᓚᘏᗢ";font-size:.9em;color:#ff9bbd}
+.note-cat{background:#fff9e9;border:1.5px dashed #f1d48a;border-radius:18px;padding:11px 14px;margin-top:10px;font-size:12.5px;color:#8b7345}
+.empty{background:rgba(255,255,255,.6);border-radius:20px}
+
+.complete-overlay{
+  position:fixed;
+  inset:0;
+  z-index:200;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:18px;
+  background:rgba(84,72,95,.22);
+  backdrop-filter:blur(4px);
+  animation:fadeIn .14s ease-out;
+}
+
+.complete-prompt{
+  width:min(520px,100%);
+  background:linear-gradient(135deg,#fff7fb,#fffaf0);
+  border:2px solid #f2d0df;
+  border-radius:28px;
+  padding:24px 22px;
+  box-shadow:0 22px 48px rgba(145,95,120,.28);
+  animation:popIn .18s ease-out;
+  text-align:center;
+}
+
+.complete-prompt .complete-title{
+  font-family:var(--serif);
+  font-size:22px;
+  font-weight:700;
+  color:#ff6e9b;
+  margin-bottom:6px;
+}
+
+.complete-prompt .complete-text{
+  font-size:14px;
+  color:var(--ink2);
+  margin-bottom:18px;
+}
+
+.complete-prompt .complete-actions{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  justify-content:center;
+}
+
+@keyframes fadeIn{
+  from{opacity:0}
+  to{opacity:1}
+}
+
+@keyframes popIn{
+  from{opacity:0;transform:translateY(8px) scale(.96)}
+  to{opacity:1;transform:translateY(0) scale(1)}
+}
+
+
+/* にゃんこ演出 */
+.float-paws{
+  position:fixed;
+  inset:0;
+  pointer-events:none;
+  overflow:hidden;
+  z-index:1;
+}
+
+.float-paws span{
+  position:absolute;
+  bottom:-40px;
+  font-size:18px;
+  opacity:.12;
+  animation:pawFloat linear infinite;
+}
+
+.float-paws span:nth-child(1){left:8%;animation-duration:15s;animation-delay:0s}
+.float-paws span:nth-child(2){left:22%;animation-duration:18s;animation-delay:3s}
+.float-paws span:nth-child(3){left:44%;animation-duration:16s;animation-delay:6s}
+.float-paws span:nth-child(4){left:66%;animation-duration:20s;animation-delay:2s}
+.float-paws span:nth-child(5){left:84%;animation-duration:17s;animation-delay:5s}
+.float-paws span:nth-child(6){left:93%;animation-duration:23s;animation-delay:8s}
+
+@keyframes pawFloat{
+  0%{transform:translateY(0) rotate(0deg) scale(.8);opacity:0}
+  12%{opacity:.14}
+  70%{opacity:.12}
+  100%{transform:translateY(-110vh) rotate(28deg) scale(1.1);opacity:0}
+}
+
+.cat-cutin{
+  position:fixed;
+  right:18px;
+  bottom:18px;
+  z-index:260;
+  display:flex;
+  align-items:center;
+  gap:12px;
+  max-width:min(440px,calc(100vw - 36px));
+  background:linear-gradient(135deg,#fff,#fff5fa);
+  border:2px solid #f2d0df;
+  border-radius:999px 28px 28px 999px;
+  padding:10px 16px 10px 10px;
+  box-shadow:0 18px 44px rgba(145,95,120,.28);
+  transform:translateX(calc(100% + 30px));
+  opacity:0;
+  pointer-events:none;
+}
+
+.cat-cutin.show{
+  animation:catCutIn 3.2s ease-in-out forwards;
+}
+
+.cat-cutin-face{
+  width:54px;
+  height:54px;
+  flex:0 0 auto;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  background:linear-gradient(135deg,#ffe4ee,#fff9ed);
+  border:2px solid #f2d0df;
+  font-size:31px;
+  animation:catWiggle 1.2s ease-in-out infinite;
+}
+
+.cat-cutin-text{
+  font-weight:700;
+  font-size:14px;
+  color:var(--ink);
+  line-height:1.5;
+}
+
+.cat-cutin-text small{
+  display:block;
+  color:#ff6e9b;
+  font-size:11px;
+  letter-spacing:.08em;
+}
+
+@keyframes catCutIn{
+  0%{transform:translateX(calc(100% + 30px));opacity:0}
+  14%{transform:translateX(0);opacity:1}
+  82%{transform:translateX(0);opacity:1}
+  100%{transform:translateX(calc(100% + 30px));opacity:0}
+}
+
+@keyframes catWiggle{
+  0%,100%{transform:rotate(0deg) translateY(0)}
+  25%{transform:rotate(-7deg) translateY(-1px)}
+  50%{transform:rotate(0deg) translateY(0)}
+  75%{transform:rotate(7deg) translateY(-1px)}
+}
+
+.paw-burst{
+  position:fixed;
+  z-index:255;
+  pointer-events:none;
+  font-size:22px;
+  animation:pawBurst .75s ease-out forwards;
+}
+
+@keyframes pawBurst{
+  from{opacity:1;transform:translate(-50%,-50%) scale(.6) rotate(0deg)}
+  to{opacity:0;transform:translate(calc(-50% + var(--x)),calc(-50% + var(--y))) scale(1.35) rotate(var(--r))}
+}
+
+.cat-sparkle{
+  position:fixed;
+  z-index:254;
+  pointer-events:none;
+  font-size:18px;
+  animation:sparklePop .9s ease-out forwards;
+}
+
+@keyframes sparklePop{
+  from{opacity:0;transform:translate(-50%,-50%) scale(.4)}
+  30%{opacity:1}
+  to{opacity:0;transform:translate(-50%,-86px) scale(1.2)}
+}
+
+.tab:hover,
+.btn:hover,
+.opt:hover{
+  transform:translateY(-2px);
+}
+
+.btn.pri{
+  position:relative;
+  overflow:hidden;
+}
+
+.btn.pri::after{
+  content:"";
+  position:absolute;
+  inset:-40% -80%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.55),transparent);
+  transform:translateX(-80%) rotate(18deg);
+  animation:buttonShine 4.6s ease-in-out infinite;
+}
+
+@keyframes buttonShine{
+  0%,55%{transform:translateX(-80%) rotate(18deg)}
+  72%,100%{transform:translateX(80%) rotate(18deg)}
+}
+
+.chcard{
+  position:relative;
+  overflow:hidden;
+}
+
+.chcard::after{
+  content:"🐾";
+  position:absolute;
+  right:13px;
+  bottom:8px;
+  font-size:24px;
+  opacity:0;
+  transform:rotate(-18deg) scale(.8);
+  transition:.18s;
+}
+
+.chcard:hover::after{
+  opacity:.20;
+  transform:rotate(8deg) scale(1);
+}
+
+.choice{
+  position:relative;
+  overflow:hidden;
+}
+
+.choice:hover::after{
+  content:"";
+  position:absolute;
+  right:14px;
+  top:50%;
+  width:30px;
+  height:30px;
+  background:radial-gradient(circle,#ffdbe7 0 34%,transparent 36%);
+  opacity:.45;
+  transform:translateY(-50%);
+}
+
+.choice.sel-ok::before{
+  content:"にゃいす！";
+  position:absolute;
+  right:12px;
+  top:8px;
+  color:var(--ok);
+  font-weight:700;
+  font-size:12px;
+}
+
+.choice.sel-ng::before{
+  content:"どんまいにゃ";
+  position:absolute;
+  right:12px;
+  top:8px;
+  color:var(--ng);
+  font-weight:700;
+  font-size:12px;
+}
+
+.cat-mascot{
+  animation:mascotFloat 3.4s ease-in-out infinite;
+}
+
+@keyframes mascotFloat{
+  0%,100%{transform:translateY(0)}
+  50%{transform:translateY(-7px)}
+}
+
+.cat-bubble{
+  animation:bubblePulse 2.8s ease-in-out infinite;
+}
+
+@keyframes bubblePulse{
+  0%,100%{transform:scale(1)}
+  50%{transform:scale(1.04)}
+}
+
+.complete-overlay{
+  animation:fadeIn .14s ease-out;
+}
+
+.complete-prompt::before{
+  content:"🐾 🐾 🐾";
+  display:block;
+  color:#ff9bbd;
+  font-size:18px;
+  margin-bottom:5px;
+  animation:pawDance 1.1s ease-in-out infinite;
+}
+
+@keyframes pawDance{
+  0%,100%{letter-spacing:2px;transform:translateY(0)}
+  50%{letter-spacing:7px;transform:translateY(-2px)}
+}
+
+@media (prefers-reduced-motion: reduce){
+  *,
+  *::before,
+  *::after{
+    animation:none!important;
+    transition:none!important;
+    scroll-behavior:auto!important;
+  }
+}
+
+@media(max-width:560px){ main{padding:16px 12px 70px} .card{padding:15px 14px} .hero{padding:20px 16px} .hero-grid{grid-template-columns:1fr} .cat-mascot{margin:0 auto} }
 </style>
 </head>
 <body>
 <header>
   <div class="hwrap">
-    <div class="mark">合</div>
+    <div class="mark">🐱</div>
     <div>
-      <div class="htitle">ITパスポート合格道場</div>
-      <div class="hsub">IP EXAM STUDY — シラバス6.3対応</div>
+      <div class="htitle">ITパスポート にゃんこ合格道場</div>
+      <div class="hsub">IP EXAM STUDY — シラバス6.3対応 / ねこっとかわいく学習</div>
     </div>
   </div>
   <nav id="nav"></nav>
 </header>
 <main id="main"></main>
+<div class="float-paws" aria-hidden="true">
+  <span>🐾</span><span>🐾</span><span>🐾</span><span>🐾</span><span>🐾</span><span>🐾</span>
+</div>
+<div id="catCutin" class="cat-cutin" aria-live="polite">
+  <div class="cat-cutin-face" id="catCutinFace">🐱</div>
+  <div class="cat-cutin-text"><small>NYAN SUPPORT</small><span id="catCutinText">今日もえらいにゃ</span></div>
+</div>
 <script>
 /* ================= DATA ================= */
 const FIELDS = {
@@ -648,7 +989,89 @@ Q('t6','ソーシャルエンジニアリングに該当する行為はどれか
 
 /* ================= APP ================= */
 const $main=document.getElementById('main'), $nav=document.getElementById('nav');
+const $catCutin=document.getElementById('catCutin'), $catCutinText=document.getElementById('catCutinText'), $catCutinFace=document.getElementById('catCutinFace');
 const esc=s=>String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+
+function showCatCutin(msg,face='🐱'){
+  if(!$catCutin)return;
+  $catCutinText.textContent=msg;
+  $catCutinFace.textContent=face;
+  $catCutin.classList.remove('show');
+  void $catCutin.offsetWidth;
+  $catCutin.classList.add('show');
+}
+
+function pawBurst(x=window.innerWidth/2,y=window.innerHeight/2,kind='🐾'){
+  const dirs=[
+    [-68,-34,'-22deg'],[-34,-74,'18deg'],[28,-68,'38deg'],[72,-30,'-12deg'],
+    [-60,34,'26deg'],[-16,66,'-30deg'],[42,54,'16deg'],[0,-94,'0deg']
+  ];
+  dirs.forEach(([dx,dy,r],idx)=>{
+    const s=document.createElement('span');
+    s.className=idx%3===0?'cat-sparkle':'paw-burst';
+    s.textContent=idx%3===0?'✨':kind;
+    s.style.left=x+'px'; s.style.top=y+'px';
+    s.style.setProperty('--x',dx+'px');
+    s.style.setProperty('--y',dy+'px');
+    s.style.setProperty('--r',r);
+    document.body.appendChild(s);
+    setTimeout(()=>s.remove(),950);
+  });
+}
+
+function eventPoint(ev){
+  if(ev&&ev.clientX&&ev.clientY)return [ev.clientX,ev.clientY];
+  return [window.innerWidth/2,window.innerHeight/2];
+}
+
+function pickCat(arr){ return arr[Math.floor(Math.random()*arr.length)]; }
+
+function catModeTalk(mode, extra=''){
+  const lines={
+    home:[
+      ['今日も一歩だけ進めば十分にゃ。','🐱'],
+      ['合格までの道のり、肉球でぺたぺた進もう。','🐾'],
+      ['焦らなくてOK。昨日の自分より少し前へにゃ。','😺']
+    ],
+    chapter:[
+      [`${extra}を開いたにゃ。大事なところを拾っていこう！`,'📖'],
+      ['章の本文はざっくり→用語で確認、がコツにゃ。','🐱'],
+      ['完璧に覚えなくても大丈夫。まず一周にゃ。','😺']
+    ],
+    cardStart:[
+      ['カード修行スタートにゃ。めくって覚える！','🐾'],
+      ['用語は短く何度も見るのが勝ちにゃ。','😼'],
+      ['わからないカードは「まだ」でOKにゃ。','🐱']
+    ],
+    cardKnown:[
+      ['覚えたにゃ！その調子！','😸'],
+      ['いい肉球記憶にゃ。','🐾'],
+      ['用語マスターに近づいたにゃ！','😻']
+    ],
+    cardAgain:[
+      ['まだでも大丈夫。もう一回なでよう。','🐱'],
+      ['ここは復習候補にゃ。あとで効いてくる！','😼'],
+      ['忘れるのは普通にゃ。見直せば勝ち！','😺']
+    ],
+    quizStart:[
+      ['演習スタートにゃ。解説まで読むと強い！','😼'],
+      ['四択は消去法も使うにゃ。','🐱'],
+      ['間違いは宝物にゃ。弱点が見える！','🐾']
+    ],
+    quizMilestone:[
+      ['いいペースにゃ。このまま続けよう！','😺'],
+      ['集中できてるにゃ。あと少し！','😼'],
+      ['肉球スタンプを押したい進み具合にゃ。','🐾']
+    ],
+    result:[
+      ['結果確認にゃ。次の一手を選ぼう！','📊'],
+      ['解けた問題も、迷った問題も成長の材料にゃ。','🐱'],
+      ['弱点復習まで行けたらかなり偉いにゃ。','😺']
+    ]
+  };
+  const [msg,face]=pickCat(lines[mode]||lines.home);
+  showCatCutin(msg,face);
+}
 const KANA=['ア','イ','ウ','エ'];
 let S={read:{}, qs:{}, terms:{}, mocks:[]}; // state
 let memOnly=false;
@@ -675,12 +1098,38 @@ function saveS(){
 const TABS=[['home','ホーム'],['learn','教科書'],['cards','一問一答'],['quiz','過去問演習'],['mock','模擬試験'],['weak','弱点復習']];
 let cur='home';
 function renderNav(){ $nav.innerHTML=TABS.map(t=>`<button class="tab ${cur===t[0]?'on':''}" onclick="go('${t[0]}')">${t[1]}</button>`).join(''); }
-function go(t){ cur=t; renderNav(); window.scrollTo(0,0); VIEWS[t](); }
+function go(t){
+  cur=t; renderNav(); window.scrollTo(0,0); VIEWS[t]();
+  if(t==='learn')showCatCutin('教科書をひらいたにゃ。1章ずついこう！','📚');
+  if(t==='quiz')showCatCutin('演習モードに突入にゃ！','😼');
+  if(t==='cards')showCatCutin('用語カードで肉球トレーニング！','🐾');
+  if(t==='mock')showCatCutin('模擬試験に挑戦にゃ。時間配分がカギ！','⏱️');
+  if(t==='weak')showCatCutin('弱点復習だにゃ。間違いは伸びしろ！','🐱');
+}
 
 /* ---- stats helpers ---- */
 function qStats(filter){ let c=0,w=0,seen=0; QUESTIONS.forEach((q,i)=>{ if(filter&&!filter(q))return; const s=S.qs[i]; if(s){seen++;c+=s.c;w+=s.w;} }); return {c,w,seen,rate:(c+w)?Math.round(c/(c+w)*100):0}; }
 function fieldOfCh(id){ const ch=CHAPTERS.find(c=>c.id===id); return ch?ch.field:''; }
+function chIndex(id){ return CHAPTERS.findIndex(c=>c.id===id); }
+function nextCh(id){ const i=chIndex(id); return i>=0&&i<CHAPTERS.length-1 ? CHAPTERS[i+1] : null; }
+function prevCh(id){ const i=chIndex(id); return i>0 ? CHAPTERS[i-1] : null; }
 function allTerms(field){ const out=[]; CHAPTERS.forEach(ch=>{ if(field&&ch.field!==field)return; ch.terms.forEach((t,i)=>out.push({key:ch.id+'#'+i,term:t[0],def:t[1],field:ch.field})); }); return out; }
+function completePromptHTML(id, stayAction=`vChapter('${id}')`, includeQuiz=false){
+  const c=CHAPTERS.find(x=>x.id===id); if(!c)return '';
+  const nx=nextCh(id);
+  return `<div class="complete-overlay">
+      <div class="complete-prompt">
+        <div class="complete-title">🐾 学習完了しました！</div>
+      <div class="complete-text">${nx?`次の章「${esc(nx.title)}」へ進みますか？`:'これで教科書は最後まで完了です。次は演習へ進みますか？'}</div>
+      <div class="complete-actions">
+        ${nx?`<button class="btn pri" onclick="vChapter('${nx.id}')">次の章へ進む 🐱</button>`:`<button class="btn pri" onclick="go('quiz')">演習へ進む 🐱</button>`}
+        ${includeQuiz?`<button class="btn" onclick="startQuiz('${c.field}','${id}')">この章の問題を解く</button>`:''}
+        <button class="btn" onclick="${stayAction}">この章に残る</button>
+        <button class="btn" onclick="go('learn')">章一覧に戻る</button>
+        </div>
+      </div>
+    </div>`;
+}
 
 /* ---- HOME ---- */
 function vHome(){
@@ -690,8 +1139,24 @@ function vHome(){
   const lastMock=S.mocks[S.mocks.length-1];
   $main.innerHTML=`
   <div class="hero">
-    <h2>独学で、一発合格へ。</h2>
-    <p>ITパスポート試験は <b>100問・120分</b>。総合評価点 <b>600点/1000点</b> 以上、かつ3分野すべてで <b>300点/1000点</b> 以上が合格基準です。このサイトの「教科書 → 一問一答 → 演習 → 模試」のサイクルを回せば、合格レベルの知識が体系的に身につきます。</p>
+    <div class="hero-grid">
+      <div>
+        <div class="kira">✨ かわいくコツコツ、にゃんと合格を目指そう</div>
+        <h2>ねこ気分で、やさしく一発合格へ。</h2>
+        <p>ITパスポート試験は <b>100問・120分</b>。総合評価点 <b>600点/1000点</b> 以上、かつ3分野すべてで <b>300点/1000点</b> 以上が合格基準です。このサイトの「教科書 → 一問一答 → 演習 → 模試」のサイクルを回せば、合格レベルの知識が体系的に身につきます。</p>
+        <div class="catline">
+          <span class="cat-pill">🐾 やさしい配色</span>
+          <span class="cat-pill">📚 学習の流れが見やすい</span>
+          <span class="cat-pill">🎯 弱点復習もすぐできる</span>
+        </div>
+      </div>
+      <div class="cat-mascot-wrap">
+        <div class="cat-mascot">
+          <div class="cat-bubble"><b>合格にゃ！</b><br>毎日ちょっとずつでOK</div>
+          <div class="cat-face"><span>🐱</span></div>
+        </div>
+      </div>
+    </div>
   </div>
   <div class="statrow">
     <div class="stat"><div class="lb">教科書の進捗</div><div class="vl">${readN}<small> / ${CHAPTERS.length} 章</small></div><div class="bar"><i style="width:${Math.round(readN/CHAPTERS.length*100)}%"></i></div></div>
@@ -718,7 +1183,7 @@ function vHome(){
         <tr><td>出題比率</td><td>ストラテジ系 約35問/マネジメント系 約20問/テクノロジ系 約45問</td></tr>
         <tr><td>申込み</td><td>随時実施。IPAの公式サイトから希望会場・日時を予約</td></tr>
       </table>
-      <p class="note" style="margin-top:8px">※最新の試験要項・シラバスはIPA公式サイトで必ず確認してください。</p>
+      <p class="note-cat">🐾 最新の試験要項・シラバスは IPA公式サイトで必ず確認してください。</p>
     </div>
   </div>
   <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:20px">
@@ -744,8 +1209,9 @@ function vLearn(){
   }
   $main.innerHTML=html;
 }
-function vChapter(id){
+function vChapter(id, justCompleted=false){
   const c=CHAPTERS.find(x=>x.id===id); const f=FIELDS[c.field];
+  const nx=nextCh(id), pv=prevCh(id);
   let html=`<div class="backrow"><button class="btn sm" onclick="go('learn')">← 章一覧へ</button><span class="fieldchip ${f.cls}">${f.name}</span></div>
   <h2 class="pg">${esc(c.title)}</h2><div class="pgsub">${esc(c.intro)}</div><div class="card lesson">`;
   c.sections.forEach(s=>{ html+=`<h3>${esc(s.h)}</h3><p>${esc(s.b)}</p>`; });
@@ -753,20 +1219,34 @@ function vChapter(id){
   c.terms.forEach(t=>{ html+=`<tr><td>${esc(t[0])}</td><td>${esc(t[1])}</td></tr>`; });
   html+=`</table></div>
   <div style="display:flex;gap:12px;margin-top:18px;flex-wrap:wrap">
-    <button class="btn ${S.read[id]?'':'pri'}" onclick="markRead('${id}')">${S.read[id]?'✓ 学習済み(取り消す)':'この章を学習完了にする'}</button>
+    ${pv?`<button class="btn" onclick="vChapter('${pv.id}')">← 前の章へ</button>`:''}
+    <button class="btn ${S.read[id]?'':'pri'}" onclick="markRead('${id}')">${S.read[id]?'✓ 学習済み':'この章を学習完了にする'}</button>
     <button class="btn" onclick="startQuiz('${c.field}','${id}')">この章の問題を解く</button>
+    ${S.read[id]?`<button class="btn sm" onclick="unmarkRead('${id}')">学習済みを取り消す</button>`:''}
   </div>`;
-  $main.innerHTML=html; window.scrollTo(0,0);
+
+  if(justCompleted){
+    html+=completePromptHTML(id,`vChapter('${id}')`,true);
+  }
+
+  $main.innerHTML=html;
+  if(!justCompleted){
+    window.scrollTo(0,0);
+    setTimeout(()=>catModeTalk('chapter',c.title),160);
+  }
 }
-function markRead(id){ if(S.read[id])delete S.read[id]; else S.read[id]=1; saveS(); vChapter(id); }
+
+function markRead(id){ S.read[id]=1; saveS(); vChapter(id,true); pawBurst(window.innerWidth/2,window.innerHeight/2,'🐾'); showCatCutin('学習完了にゃ！次の行き先を選ぼう。','😺'); }
+function unmarkRead(id){ delete S.read[id]; saveS(); vChapter(id,false); }
 
 /* ---- FLASHCARDS ---- */
 let fc={deck:[],i:0,flip:false,field:''};
 function vCards(){
   const counts=Object.keys(FIELDS).map(fk=>{ const t=allTerms(fk); const k=t.filter(x=>S.terms[x.key]).length; return {fk,n:t.length,k}; });
-  $main.innerHTML=`<h2 class="pg">一問一答カード</h2><div class="pgsub">用語を見て意味を思い浮かべ、タップで答え合わせ。「覚えた」用語は出題されにくくなります。</div>
+  $main.innerHTML=`<h2 class="pg">一問一答カード</h2><div class="pgsub">用語を見て意味を思い浮かべ、タップで答え合わせ。「覚えた」用語は出題されにくくなります。すきま時間のにゃんこ学習にぴったり。</div>
   <div class="setuprow">${counts.map(c=>`<button class="opt ${fc.field===c.fk?'on':''}" onclick="fcField('${c.fk}')">${FIELDS[c.fk].name} ${c.k}/${c.n}</button>`).join('')}
   <button class="opt ${fc.field===''?'on':''}" onclick="fcField('')">全分野</button></div>
+  <div class="note-cat">🐾 にゃんこ暗記のコツ：1回で覚えようとせず、短く何回も見ると強いにゃ。</div>
   <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:8px">
     <button class="btn pri" onclick="fcStart(false)">未習得のカードで開始</button>
     <button class="btn" onclick="fcStart(true)">すべてのカードで開始</button>
@@ -779,6 +1259,7 @@ function fcStart(all){
   if(!all) deck=deck.filter(t=>!S.terms[t.key]);
   if(!deck.length){ $main.innerHTML=`<div class="empty">この範囲のカードはすべて「覚えた」になっています 🎉<br><br><button class="btn" onclick="vCards()">戻る</button></div>`; return; }
   fc.deck=shuffle(deck); fc.i=0; fc.flip=false; fcRender();
+  setTimeout(()=>catModeTalk('cardStart'),120);
 }
 function fcRender(){
   if(fc.i>=fc.deck.length){ $main.innerHTML=`<div class="empty"><div style="font-family:var(--serif);font-size:22px;font-weight:700;color:var(--ink)">1周おつかれさま!</div><br><button class="btn pri" onclick="fcStart(false)">未習得だけでもう1周</button> <button class="btn" onclick="vCards()">設定に戻る</button></div>`; return; }
@@ -795,17 +1276,23 @@ function fcRender(){
   </div>
   <p class="note" style="text-align:center;margin-top:14px"><button class="btn sm" onclick="vCards()">終了する</button></p>`;
 }
-function fcMark(ok){ const t=fc.deck[fc.i]; if(ok)S.terms[t.key]=1; else delete S.terms[t.key]; saveS(); fc.i++; fc.flip=false; fcRender(); }
+function fcMark(ok){
+  const t=fc.deck[fc.i];
+  if(ok){ S.terms[t.key]=1; catModeTalk('cardKnown'); pawBurst(window.innerWidth/2,window.innerHeight/2,'🐾'); }
+  else { delete S.terms[t.key]; catModeTalk('cardAgain'); }
+  saveS(); fc.i++; fc.flip=false; fcRender();
+}
 
 /* ---- QUIZ (演習) ---- */
 let qz={list:[],i:0,ans:null,correct:0,mode:'practice',startedAt:0,limitSec:0,timerId:null,mockFields:null,field:''};
 function vQuiz(){
   const stats=Object.keys(FIELDS).map(fk=>{ const s=qStats(q=>fieldOfCh(q.ch)===fk); return {fk,s}; });
-  $main.innerHTML=`<h2 class="pg">過去問演習</h2><div class="pgsub">本試験形式の四肢択一。1問ごとに解説つき。間違えた問題は「弱点復習」に自動登録されます。</div>
+  $main.innerHTML=`<h2 class="pg">過去問演習</h2><div class="pgsub">本試験形式の四肢択一。1問ごとに解説つき。間違えた問題は「弱点復習」に自動登録されます。こわがらずにどんどん解いていこう。</div>
   <div class="setuprow">
     <button class="opt ${qz.field===''?'on':''}" onclick="qz.field='';vQuiz()">全分野ミックス</button>
     ${stats.map(x=>`<button class="opt ${qz.field===x.fk?'on':''}" onclick="qz.field='${x.fk}';vQuiz()">${FIELDS[x.fk].name}(正答率 ${x.s.seen?x.s.rate+'%':'—'})</button>`).join('')}
   </div>
+  <div class="note-cat">😼 にゃんこ演習のコツ：正解しても解説を読むと、本試験で似た問題に強くなるにゃ。</div>
   <div style="display:flex;gap:10px;flex-wrap:wrap">
     <button class="btn pri" onclick="startQuiz(qz.field||null,null,10)">10問 解く</button>
     <button class="btn" onclick="startQuiz(qz.field||null,null,20)">20問 解く</button>
@@ -818,8 +1305,10 @@ function pickQuestions(field,ch,n){
   return pool.slice(0,n||pool.length).map(x=>x.i);
 }
 function startQuiz(field,ch,n){
-  qz={...qz,list:shuffle(pickQuestions(field,ch,n||10)),i:0,ans:null,correct:0,mode:'practice',mockFields:null}; 
+  qz={...qz,list:shuffle(pickQuestions(field,ch,n||10)),i:0,ans:null,correct:0,mode:'practice',mockFields:null,chapterId:ch||null}; 
   if(!qz.list.length){ $main.innerHTML='<div class="empty">この範囲の問題はまだありません。</div>'; return; }
+  catModeTalk('quizStart');
+  pawBurst(window.innerWidth/2,window.innerHeight/2,'🐾');
   qRender();
 }
 function qRender(){
@@ -851,12 +1340,33 @@ function qAnswer(ci){
   const qi=qz.list[qz.i], q=QUESTIONS[qi];
   qz.ans=ci;
   const st=S.qs[qi]||(S.qs[qi]={c:0,w:0,lw:false});
-  if(ci===q.a){ qz.correct++; st.c++; st.lw=false; } else { st.w++; st.lw=true; }
+  if(ci===q.a){
+    qz.correct++; st.c++; st.lw=false;
+    if(qz.mode!=='mock'){ const [x,y]=eventPoint(event); pawBurst(x,y,'🐾'); showCatCutin('正解にゃ！その調子！','😸'); }
+  } else {
+    st.w++; st.lw=true;
+    if(qz.mode!=='mock'){ const [x,y]=eventPoint(event); pawBurst(x,y,'💧'); showCatCutin('惜しいにゃ。解説で取り返そう！','🙀'); }
+  }
   saveS();
-  if(qz.mode==='mock'){ qz.fieldRec.push({f:fieldOfCh(q.ch),ok:ci===q.a}); qz.ans=null; qz.i++; qRender(); }
+  if(qz.mode==='mock'){
+    qz.fieldRec.push({f:fieldOfCh(q.ch),ok:ci===q.a}); qz.ans=null; qz.i++;
+    if(qz.i>0 && qz.i<qz.list.length && qz.i%10===0)setTimeout(()=>showCatCutin(`${qz.i}問進んだにゃ。深呼吸して続けよう！`,'⏱️'),120);
+    qRender();
+  }
   else qRender();
 }
-function qNext(){ qz.ans=null; qz.i++; qRender(); }
+function qNext(){
+  qz.ans=null; qz.i++;
+  if(qz.i>0 && qz.i<qz.list.length && qz.i%3===0) setTimeout(()=>catModeTalk('quizMilestone'),120);
+  qRender();
+}
+function completeChapterFromQuiz(id){
+  S.read[id]=1; saveS();
+  pawBurst(window.innerWidth/2,window.innerHeight/2,'🐾');
+  showCatCutin('この章も学習完了にしたにゃ！','😺');
+  const box=document.getElementById('quizCompletePrompt');
+  if(box) box.innerHTML=completePromptHTML(id,`qResult()`,false);
+}
 function qResult(){
   const rate=Math.round(qz.correct/qz.list.length*100);
   $main.innerHTML=`<div class="card" style="text-align:center;padding:30px 20px">
@@ -864,10 +1374,20 @@ function qResult(){
     <div class="scorebig">${qz.correct}<small> / ${qz.list.length} 問正解(${rate}%)</small></div>
     <p style="font-size:13.5px;color:var(--ink2);margin:10px 0 18px">${rate>=80?'仕上がってきています。次は模試で本番形式に挑戦!':rate>=60?'合格圏が見えてきました。間違えた問題の解説を読み返そう。':'まだ伸びしろたっぷり。教科書に戻って該当章を読み直すのが近道です。'}</p>
     <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap">
-      <button class="btn pri" onclick="go('quiz')">もう一度演習する</button>
+      ${qz.chapterId&&!S.read[qz.chapterId]?`<button class="btn pri" onclick="completeChapterFromQuiz('${qz.chapterId}')">この章を学習完了にする 🐾</button>`:''}
+      ${qz.chapterId?`<button class="btn" onclick="startQuiz('${fieldOfCh(qz.chapterId)}','${qz.chapterId}')">この章の問題をもう一度解く</button>`:''}
+      <button class="btn ${qz.chapterId?'':'pri'}" onclick="go('quiz')">${qz.chapterId?'演習メニューへ':'もう一度演習する'}</button>
       <button class="btn" onclick="go('weak')">弱点を復習する</button>
       <button class="btn" onclick="go('home')">ホームへ</button>
-    </div></div>`;
+    </div>
+    <div id="quizCompletePrompt"></div>
+  </div>`;
+  setTimeout(()=>{
+    if(rate>=90)showCatCutin('ほぼ完璧にゃ！模試へ行ってもよさそう！','😻');
+    else if(rate>=80)showCatCutin('すごいにゃ！模試もいけそう！','😸');
+    else if(rate>=60)showCatCutin('いい感じにゃ。弱点をつぶそう！','🐱');
+    else showCatCutin('ここから伸びるにゃ。あせらず復習！','😺');
+  },120);
 }
 
 /* ---- MOCK EXAM ---- */
@@ -878,6 +1398,7 @@ function vMock(){
     S.mocks.slice(-8).reverse().map(m=>`<tr><td>${m.date}</td><td><b>${m.total}</b></td><td>${m.fs.strategy}</td><td>${m.fs.management}</td><td>${m.fs.technology}</td><td>${m.pass?'<b style="color:var(--ok)">合格</b>':'<span style="color:var(--ng)">不合格</span>'}</td></tr>`).join('')+`</table></div>`;
   }
   $main.innerHTML=`<h2 class="pg">模擬試験</h2><div class="pgsub">本試験と同じ分野比率で30問を出題(制限時間36分=本試験と同じペース)。解説は試験後にまとめて確認できます。</div>
+  <div class="note-cat">🐱 にゃんこ模試の心得：迷ったら印象で止まらず、明らかに違う選択肢から消していこう。</div>
   <div class="card">
     <table class="termtbl">
       <tr><td>出題数</td><td>30問(ストラテジ10・マネジメント6・テクノロジ14)</td></tr>
@@ -890,8 +1411,10 @@ function vMock(){
 function startMock(){
   const pick=(f,n)=>shuffle(pickQuestions(f,null,999)).slice(0,n);
   const list=shuffle([...pick('strategy',10),...pick('management',6),...pick('technology',14)]);
-  qz={list,i:0,ans:null,correct:0,mode:'mock',startedAt:Date.now(),limitSec:36*60,fieldRec:[],field:qz.field};
+  qz={list,i:0,ans:null,correct:0,mode:'mock',startedAt:Date.now(),limitSec:36*60,fieldRec:[],field:qz.field,chapterId:null};
   clearInterval(qz.timerId); qz.timerId=setInterval(updTimer,1000);
+  showCatCutin('模試スタートにゃ。正誤は最後まで秘密！','😼');
+  pawBurst(window.innerWidth/2,window.innerHeight/2,'🐾');
   qRender();
 }
 function updTimer(){
@@ -924,12 +1447,18 @@ function mockResult(){
       <button class="btn" onclick="startMock()">もう一度受験</button>
       <button class="btn" onclick="go('mock')">模試トップへ</button>
     </div></div>`;
+  setTimeout(()=>showCatCutin(pass?'合格ライン突破にゃ！すごい！':'あと一歩にゃ。弱点復習へいこう！',pass?'😻':'🐱'),120);
 }
 
 /* ---- WEAK REVIEW ---- */
 function vWeak(){
   const weak=Object.entries(S.qs).filter(([i,s])=>s.lw).map(([i])=>+i);
-  if(!weak.length){ $main.innerHTML=`<h2 class="pg">弱点復習</h2><div class="empty">いま復習が必要な問題はありません。<br>演習や模試で間違えた問題が、ここに自動で集まります。<br><br><button class="btn pri" onclick="go('quiz')">演習へ</button></div>`; return; }
+  if(!weak.length){
+    $main.innerHTML=`<h2 class="pg">弱点復習</h2><div class="empty">いま復習が必要な問題はありません。<br>演習や模試で間違えた問題が、ここに自動で集まります。<br><br><button class="btn pri" onclick="go('quiz')">演習へ</button></div>`;
+    setTimeout(()=>showCatCutin('弱点なしにゃ！すごい！演習で腕だめししよう。','😻'),150);
+    return;
+  }
+  setTimeout(()=>showCatCutin(`復習する問題が ${weak.length} 問あるにゃ。1つずつ倒そう！`,'🐾'),150);
   $main.innerHTML=`<h2 class="pg">弱点復習</h2><div class="pgsub">最後に間違えたままの問題が ${weak.length} 問あります。正解すればリストから消えます。</div>
   <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px"><button class="btn pri" onclick="startWeak()">弱点だけ解き直す(${Math.min(weak.length,15)}問)</button></div>
   <div class="grid2">${weak.slice(0,30).map(i=>{ const q=QUESTIONS[i]; const f=FIELDS[fieldOfCh(q.ch)]; const ch=CHAPTERS.find(c=>c.id===q.ch);
@@ -937,11 +1466,13 @@ function vWeak(){
 }
 function startWeak(){
   const weak=shuffle(Object.entries(S.qs).filter(([i,s])=>s.lw).map(([i])=>+i)).slice(0,15);
-  qz={...qz,list:weak,i:0,ans:null,correct:0,mode:'practice',mockFields:null}; qRender();
+  showCatCutin('弱点だけ集中トレーニングにゃ！','😼');
+  pawBurst(window.innerWidth/2,window.innerHeight/2,'🐾');
+  qz={...qz,list:weak,i:0,ans:null,correct:0,mode:'practice',mockFields:null,chapterId:null}; qRender();
 }
 
 const VIEWS={home:vHome,learn:vLearn,cards:vCards,quiz:vQuiz,mock:vMock,weak:vWeak};
-(async()=>{ await loadS(); renderNav(); vHome(); })();
+(async()=>{ await loadS(); renderNav(); vHome(); setTimeout(()=>catModeTalk('home'),450); })();
 </script>
 </body>
 </html>
