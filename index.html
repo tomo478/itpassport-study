@@ -138,6 +138,8 @@ h2.pg{font-family:var(--serif);font-size:25px;font-weight:700;letter-spacing:.05
 .mockhist th{font-family:var(--serif);border-bottom:2px solid #e4bccd}
 .timer{font-family:var(--serif);font-weight:700;font-size:16px;color:var(--indigo)}
 .tag-weak{font-size:10.5px;color:var(--ng);border:1px solid var(--ng);border-radius:99px;padding:0 7px;font-weight:700}
+.weak-answer{margin-top:9px;padding:9px 10px;border-radius:12px;background:#fff7fb;border:1.5px solid #f1d6e2;font-size:12.8px;line-height:1.6}
+.weak-answer b{color:var(--shu)}
 
 .hero-grid{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(180px,.6fr);gap:18px;align-items:center}
 .kira{display:inline-flex;align-items:center;gap:8px;background:#fff6b8;color:#8f6e14;border-radius:999px;padding:6px 12px;font-size:12px;font-weight:700;margin-bottom:12px;box-shadow:0 6px 14px rgba(255,207,123,.22)}
@@ -1490,7 +1492,7 @@ function vWeak(){
   $main.innerHTML=`<h2 class="pg">弱点復習</h2><div class="pgsub">最後に間違えたままの問題が ${weak.length} 問あります。正解すればリストから消えます。</div>
   <div style="display:flex;gap:10px;flex-wrap:wrap;margin-bottom:16px"><button class="btn pri" onclick="startWeak()">弱点だけ解き直す(${Math.min(weak.length,15)}問)</button></div>
   <div class="grid2">${weak.slice(0,30).map(i=>{ const q=QUESTIONS[i]; const f=FIELDS[fieldOfCh(q.ch)]; const ch=CHAPTERS.find(c=>c.id===q.ch);
-    return `<div class="card" style="padding:13px 15px"><div style="display:flex;gap:8px;align-items:center;margin-bottom:6px"><span class="fieldchip ${f.cls}">${f.name}</span><span class="tag-weak">要復習</span></div><div style="font-size:13.5px;font-weight:700;line-height:1.6">${esc(q.q)}</div><div class="note" style="margin-top:6px">該当章:<a href="javascript:void(0)" onclick="vChapter('${q.ch}')" style="color:var(--indigo)">${esc(ch.title)}</a></div></div>`; }).join('')}</div>`;
+    return `<div class="card" style="padding:13px 15px"><div style="display:flex;gap:8px;align-items:center;margin-bottom:6px"><span class="fieldchip ${f.cls}">${f.name}</span><span class="tag-weak">要復習</span></div><div style="font-size:13.5px;font-weight:700;line-height:1.6">${esc(q.q)}</div><div class="weak-answer"><b>正解</b> ${esc(q.c[q.a])}</div><div class="note" style="margin-top:6px">該当章:<a href="javascript:void(0)" onclick="vChapter('${q.ch}')" style="color:var(--indigo)">${esc(ch.title)}</a></div></div>`; }).join('')}</div>`;
 }
 function startWeak(){
   const weak=shuffle(Object.entries(S.qs).filter(([i,s])=>s.lw).map(([i])=>+i)).slice(0,15);
