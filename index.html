@@ -84,6 +84,10 @@ h2.pg{font-family:var(--serif);font-size:25px;font-weight:700;letter-spacing:.05
 .done-pill{font-size:10.5px;font-weight:700;color:var(--ok);border:1.5px solid var(--ok);border-radius:99px;padding:0 8px}
 .lesson h3{font-family:var(--serif);font-size:19px;border-left:4px solid var(--shu);padding-left:10px;margin:26px 0 10px}
 .lesson p{font-size:14.5px;margin-bottom:10px}
+.term-tip{border:none;background:linear-gradient(transparent 62%,#ffe4ef 62%);color:var(--shu);font-weight:700;padding:0 2px;border-radius:5px;box-shadow:none;cursor:pointer}
+.term-tip.on{background:#ffe4ef;box-shadow:0 0 0 1px #f2b7cf}
+.term-memo{display:inline-block;margin:4px 3px;padding:6px 9px;border:1.5px solid #f1d6e2;border-radius:12px;background:#fff7fb;color:#6f5365;font-size:12.5px;line-height:1.55;vertical-align:baseline;box-shadow:0 6px 14px rgba(236,196,214,.18)}
+.term-memo b{color:#ff6d9c}
 .lesson .point{background:var(--shu-soft);border-radius:8px;padding:11px 14px;font-size:13.5px;margin:12px 0;border-left:4px solid var(--shu)}
 .lesson .point b{color:var(--shu)}
 .termtbl{width:100%;border-collapse:collapse;font-size:13.5px;margin-top:8px}
@@ -991,6 +995,7 @@ Q('t6','ソーシャルエンジニアリングに該当する行為はどれか
 const $main=document.getElementById('main'), $nav=document.getElementById('nav');
 const $catCutin=document.getElementById('catCutin'), $catCutinText=document.getElementById('catCutinText'), $catCutinFace=document.getElementById('catCutinFace');
 const esc=s=>String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+const escAttr=s=>esc(s).replace(/"/g,'&quot;');
 
 function showCatCutin(msg,face='🐱'){
   if(!$catCutin)return;
@@ -1114,6 +1119,28 @@ function chIndex(id){ return CHAPTERS.findIndex(c=>c.id===id); }
 function nextCh(id){ const i=chIndex(id); return i>=0&&i<CHAPTERS.length-1 ? CHAPTERS[i+1] : null; }
 function prevCh(id){ const i=chIndex(id); return i>0 ? CHAPTERS[i-1] : null; }
 function allTerms(field){ const out=[]; CHAPTERS.forEach(ch=>{ if(field&&ch.field!==field)return; ch.terms.forEach((t,i)=>out.push({key:ch.id+'#'+i,term:t[0],def:t[1],field:ch.field})); }); return out; }
+function renderTermText(text,ch){
+  const terms=[...ch.terms].sort((a,b)=>b[0].length-a[0].length);
+  let out='', i=0;
+  while(i<text.length){
+    const hit=terms.find(t=>text.startsWith(t[0],i));
+    if(hit){
+      out+=`<button type="button" class="term-tip" onclick="toggleTermMemo(this)" aria-label="${escAttr(hit[0])}の説明を見る">${esc(hit[0])}</button><span class="term-memo" hidden><b>にゃんこ用語メモ</b><br>${esc(hit[1])}</span>`;
+      i+=hit[0].length;
+    }else{
+      out+=esc(text[i]);
+      i++;
+    }
+  }
+  return out;
+}
+function toggleTermMemo(btn){
+  const memo=btn.nextElementSibling;
+  const willOpen=!memo||memo.hidden;
+  document.querySelectorAll('.term-memo').forEach(m=>m.hidden=true);
+  document.querySelectorAll('.term-tip.on').forEach(b=>b.classList.remove('on'));
+  if(memo&&willOpen){ memo.hidden=false; btn.classList.add('on'); }
+}
 function completePromptHTML(id, stayAction=`vChapter('${id}')`, includeQuiz=false){
   const c=CHAPTERS.find(x=>x.id===id); if(!c)return '';
   const nx=nextCh(id);
@@ -1213,7 +1240,7 @@ function vChapter(id, justCompleted=false){
   const nx=nextCh(id), pv=prevCh(id);
   let html=`<div class="backrow"><button class="btn sm" onclick="go('learn')">← 章一覧へ</button><span class="fieldchip ${f.cls}">${f.name}</span></div>
   <h2 class="pg">${esc(c.title)}</h2><div class="pgsub">${esc(c.intro)}</div><div class="card lesson">`;
-  c.sections.forEach(s=>{ html+=`<h3>${esc(s.h)}</h3><p>${esc(s.b)}</p>`; });
+  c.sections.forEach(s=>{ html+=`<h3>${esc(s.h)}</h3><p>${renderTermText(s.b,c)}</p>`; });
   html+=`<h3>この章の重要用語</h3><table class="termtbl"><tr><th>用語</th><th>意味</th></tr>`;
   c.terms.forEach(t=>{ html+=`<tr><td>${esc(t[0])}</td><td>${esc(t[1])}</td></tr>`; });
   html+=`</table></div>
